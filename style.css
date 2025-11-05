@@ -1,0 +1,59 @@
+/* === Base Theme === */
+* { box-sizing: border-box; }
+:root {
+  --bg: #0b0f14;
+  --surface: #10161f;
+  --muted: #1a2332;
+  --text: #e6eef8;
+  --subtext: #9fb3c8;
+  --primary: #4f8cff;
+  --accent: #22c55e;
+  --danger: #ef4444;
+  --border: #233042;
+  --radius: 16px;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+html, body { height: 100%; background: #0b0f14; color: var(--text); font-family: Inter, system-ui, sans-serif; }
+.container { width: min(1200px, 92%); margin-inline: auto; }
+.header { display: flex; gap: .8rem; align-items: center; justify-content: space-between; padding: 1rem 0; }
+.brand { font-weight: 800; font-size: 1.4rem; } .brand span { color: var(--primary); }
+.input {
+  background: var(--surface); color: var(--text); border: 1px solid var(--border);
+  padding: .8rem .9rem; border-radius: 12px; outline: none; width: 100%;
+}
+.input:focus { border-color: var(--primary); box-shadow: 0 0 0 4px rgba(79,140,255,.15); }
+.btn { display: inline-flex; align-items:center; gap:.5rem; padding:.8rem 1rem; border-radius:12px; border:1px solid var(--border); background:var(--muted); color:var(--text); box-shadow:var(--shadow); cursor:pointer; }
+.btn.primary { background: linear-gradient(135deg,#4f8cff,#6aa7ff); border:none; }
+.btn.danger { background:#2a1b1d; border-color:#3b2225; color:#ffb3b8; }
+.btn.danger.outline { background: transparent; }
+.cart-btn { position: relative; }
+.cart-count { position:absolute; top:-8px; right:-8px; width:22px; height:22px; display:grid; place-items:center; font-size:.75rem; font-weight:700; background:var(--accent); color:#02140a; border-radius:999px; border:2px solid #0b0f14; }
+
+.controls { margin-top:.5rem; display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem; background:rgba(16,22,31,.6); border:1px solid var(--border); border-radius:var(--radius); padding:1rem; }
+.control { display:grid; gap:.35rem; } .control label { color:var(--subtext); font-size:.9rem; }
+
+.grid { margin:1.2rem 0 2.2rem; display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; }
+.card { background:rgba(16,22,31,.9); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; transition:transform .15s ease; }
+.card:hover{ transform:translateY(-3px); }
+.card img{ width:100%; height:180px; object-fit:cover; background:#0a0e15; }
+.card-body{ padding:.9rem; display:grid; gap:.4rem; }
+.card-title{ font-weight:600; }
+.card-meta{ display:flex; align-items:center; justify-content:space-between; color:var(--subtext); font-size:.95rem; }
+.price{ font-weight:800; color:#d8e6ff; } .rating{ font-size:.9rem; }
+.tags{ display:flex; gap:.4rem; flex-wrap:wrap; } .tag{ font-size:.75rem; padding:.2rem .5rem; border-radius:999px; border:1px solid var(--border); }
+
+/* Cart */
+.overlay { position:fixed; inset:0; background:rgba(0,0,0,.4); backdrop-filter: blur(2px); }
+.cart-drawer{ position:fixed; top:0; right:0; height:100dvh; width:min(420px,92%); background:#0e1420; border-left:1px solid var(--border); transform:translateX(110%); transition:transform .2s ease; display:grid; grid-template-rows:auto 1fr auto; z-index:50; box-shadow:var(--shadow); }
+.cart-drawer.open{ transform:translateX(0); }
+.cart-header{ display:flex; align-items:center; justify-content:space-between; padding:1rem; border-bottom:1px solid var(--border); }
+.cart-items{ padding:1rem; display:grid; gap:.8rem; overflow:auto; }
+.cart-item{ display:grid; grid-template-columns:64px 1fr auto; gap:.8rem; align-items:center; background:#0c111b; border:1px solid var(--border); border-radius:12px; padding:.6rem; }
+.cart-item img{ width:64px; height:64px; object-fit:cover; border-radius:10px; }
+.cart-footer{ padding:1rem; border-top:1px solid var(--border); display:grid; gap:.8rem; }
+.totals{ display:grid; gap:.4rem; } .totals div{ display:flex; justify-content:space-between; color:var(--subtext); } .totals .grand{ color:var(--text); font-weight:800; font-size:1.1rem; }
+.footer{ padding:2rem 0 3rem; text-align:center; color:var(--subtext); }
+
+@media (max-width: 1100px){ .grid{ grid-template-columns:repeat(3,1fr);} }
+@media (max-width: 800px){ .grid{ grid-template-columns:repeat(2,1fr);} .controls{ grid-template-columns:1fr;} }
+@media (max-width: 480px){ .grid{ grid-template-columns:1fr;} }

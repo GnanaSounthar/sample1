@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sales Shop</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="container header">
+    <div class="brand">🛒 Sales <span>Shop</span></div>
+    <input id="searchInput" class="input" type="search" placeholder="Search products..."/>
+    <button id="openCartBtn" class="btn cart-btn">
+      <span class="cart-count" id="cartCount">0</span>
+      Cart
+    </button>
+  </header>
+
+  <main class="container">
+    <section class="controls">
+      <div class="control">
+        <label for="categorySelect">Category</label>
+        <select id="categorySelect" class="input">
+          <option value="all">All</option>
+        </select>
+      </div>
+      <div class="control">
+        <label for="sortSelect">Sort by</label>
+        <select id="sortSelect" class="input">
+          <option value="featured">Featured</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="rating-desc">Rating: High to Low</option>
+          <option value="name-asc">Name: A → Z</option>
+        </select>
+      </div>
+      <div class="control">
+        <label for="priceRange">Max Price (₹) <span id="priceValue"></span></label>
+        <input type="range" id="priceRange" min="0" max="10000" value="10000" step="100"/>
+      </div>
+    </section>
+
+    <section id="productsGrid" class="grid"></section>
+  </main>
+
+  <!-- Cart Drawer -->
+  <aside id="cartDrawer" class="cart-drawer" aria-hidden="true">
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <button id="closeCartBtn" class="icon-btn" aria-label="Close cart">✕</button>
+    </div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="totals">
+        <div><span>Subtotal</span><strong id="subtotal">₹0</strong></div>
+        <div><span>Delivery</span><strong id="delivery">₹0</strong></div>
+        <div class="grand"><span>Total</span><strong id="grandTotal">₹0</strong></div>
+      </div>
+      <button id="checkoutBtn" class="btn primary">Checkout</button>
+      <button id="clearCartBtn" class="btn danger outline">Clear Cart</button>
+    </div>
+  </aside>
+  <div id="overlay" class="overlay" hidden></div>
+
+  <footer class="container footer">
+    <p>© <span id="year"></span> Sales Shop. Built with HTML, CSS & JS.</p>
+  </footer>
+
+  <script src="file.js"></script>
+</body>
+</html>
