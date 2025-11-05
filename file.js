@@ -2,11 +2,11 @@
 // Replace PRODUCTS with your items (id, name, price, category, rating, image, tags, stock)
 const PRODUCTS = [
   { id: 1, name: "Aurora Sneakers", price: 2599, category: "Footwear", rating: 4.6, image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop", tags: ["new","bestseller"], stock: 18 },
-  { id: 2, name: "Nimbus Hoodie", price: 1899, category: "Apparel", rating: 4.4, image: "https://images.unsplash.com/photo-1520975922284-4eec5eaf0fbd?q=80&w=1200&auto=format&fit=crop", tags: ["new"], stock: 32 },
-  { id: 3, name: "Echo Wireless Buds", price: 3499, category: "Electronics", rating: 4.2, image: "https://images.unsplash.com/photo-1585386959984-a41552231658?q=80&w=1200&auto=format&fit=crop", tags: ["hot"], stock: 12 },
+  { id: 2, name: "Nimbus Hoodie", price: 1899, category: "Apparel", rating: 4.4, image: "https://th.bing.com/th/id/R.0b16c088b52b41600c92e00666fb121f?rik=DuEFPx6UqkYjKA&riu=http%3a%2f%2fstcroixrodfactorystore.com%2fcdn%2fshop%2ffiles%2fBlackfish_M-SwiftHoodie_Nimbus-StormFront_1a4528d3-553b-4a04-ad6a-b5614a5c9c01.png%3fv%3d1731431342&ehk=iMP0TD%2bf85UVSaCNePSeskXx8t5sRJT4UTt%2fZaT2vOU%3d&risl=&pid=ImgRaw&r=0", tags: ["new"], stock: 32 },
+  { id: 3, name: "Echo Wireless Buds", price: 3499, category: "Electronics", rating: 4.2, image: "https://th.bing.com/th?id=OPAC.6qa%2fIWnEI7c%2fmQ474C474&w=592&h=550&o=5&dpr=1.3&pid=21.1", tags: ["hot"], stock: 12 },
   { id: 4, name: "Comet Backpack", price: 1499, category: "Bags", rating: 4.1, image: "https://images.unsplash.com/photo-1520975916090-3105956dac38?q=80&w=1200&auto=format&fit=crop", tags: ["eco"], stock: 20 },
   { id: 5, name: "Pulse Smartwatch", price: 4999, category: "Electronics", rating: 4.7, image: "https://images.unsplash.com/photo-1511735111819-9a3f7709049c?q=80&w=1200&auto=format&fit=crop", tags: ["bestseller"], stock: 9 },
-  { id: 6, name: "Glide Running Tee", price: 999, category: "Apparel", rating: 4.0, image: "https://images.unsplash.com/photo-1520975693416-35a8d7e9ab89?q=80&w=1200&auto=format&fit=crop", tags: [], stock: 40 }
+  { id: 6, name: "Glide Running Tee", price: 999, category: "Apparel", rating: 4.0, image: "https://tse4.mm.bing.net/th/id/OIP.DT28_o_Dv3p8WSzWbd7OogHaHa?rs=1&pid=ImgDetMain&o=7&rm=3p", tags: [], stock: 40 }
 ];
 
 const formatINR = (n) => `₹${n.toLocaleString('en-IN')}`;
